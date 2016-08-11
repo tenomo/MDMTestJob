@@ -1,12 +1,14 @@
-﻿using System;
+﻿using MDMTestJob.Domian.Entity;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MDMTestJob.Domian.Abstract
 {
     interface ICustomerRepository
     {
+
+        IEnumerable<Customer> Customers { get; }
+        void Edit(int id);
+        void Delete(int id);
+        void Create(Customer customer);
     }
 }
