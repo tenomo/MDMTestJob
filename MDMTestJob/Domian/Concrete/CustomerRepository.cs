@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using MDMTestJob.Domian.Abstract;
 using MDMTestJob.Domian.Entity;
 
 namespace MDMTestJob.Domian.Concrete
 {
-   public class CustomerRepository : AbstractRepository,  ICustomerRepository
+    public class CustomerRepository : Singleton<CustomerRepository>, ICustomerRepository
     {
-        MdmTestJob_dbEntities context;
 
+        MdmTestJob_dbEntities context;
         public IEnumerable<Customer> Customers
         {
             get
@@ -17,7 +16,7 @@ namespace MDMTestJob.Domian.Concrete
             }
         }
 
-        public CustomerRepository()
+        private CustomerRepository() : base()
         {
             this.context = new MdmTestJob_dbEntities();
         }
@@ -25,26 +24,24 @@ namespace MDMTestJob.Domian.Concrete
 
 
 
-        public void Create(Customer other)
+
+
+        public Customer Delete(int id)
         {
-            this.Save(other);
+            Customer item = context.Customers.Find(id);
+            if (item != null)
+            {
+                context.Customers.Remove(item);
+                context.SaveChanges();
+            }
+            return item;
         }
 
-        public void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Edit(Customer other)
-        {
-            this.Save(other);
-        }
 
 
-        protected override void Save(object other)
+        public void Save(Customer customer)
         {
-            Customer customer = other as Customer;
-            
+
             if (customer.CustomerId == 0)
             {
 
@@ -62,7 +59,7 @@ namespace MDMTestJob.Domian.Concrete
             this.context.SaveChanges();
         }
 
- 
+
 
 
     }
