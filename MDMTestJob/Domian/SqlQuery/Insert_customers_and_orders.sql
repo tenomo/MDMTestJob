@@ -56,6 +56,7 @@ INSERT INTO Orders
 					    Number,
 						Amount,
 					    DueTime,
+						ProcessedTime,
 						Description 
 					)
 VALUES
@@ -64,6 +65,7 @@ VALUES
 			'2j-3g-4',
 			100,
 			'2012-06-18T10:34:09', 
+			'2012-06-18T10:34:09',
 			'testing description for entry  name "Matthew Kramer"'
 		),	
 	 
@@ -72,6 +74,7 @@ VALUES
 			'2j-3g-4',
 			100,
 			'2012-06-18T10:34:09', 
+			'2012-06-18T10:34:09',
 			'testing description for entry  name "Sid Harup"'
 		),
  
@@ -80,6 +83,7 @@ VALUES
 			'2j-3g-4',
 			100,
 			'2012-06-18T10:34:09', 
+			'2012-06-18T10:34:09',
 			'testing description for entry  name "Matthew Kramer"'
 		),
 	 
@@ -88,6 +92,7 @@ VALUES
 			'2j-3g-4',
 			100,
 			'2012-06-18T10:34:09', 
+			'2012-06-18T10:34:09',
 			'testing description for entry  name "Sid Harup"'
 		),
 		 
@@ -96,6 +101,7 @@ VALUES
 			'2j-3g-4',
 			100,
 			'2012-06-18T10:34:09', 
+			'2012-06-18T10:34:09',
 			'testing description for entry  name "Pete Ramirez"'
 		),
 	 
@@ -104,6 +110,7 @@ VALUES
 			'2j-3g-4',
 			100,
 			'2012-06-18T10:34:09', 
+			'2012-06-18T10:34:09',
 			'testing description for entry  name "Matthew Kramer"'
 		),
 	 
@@ -112,6 +119,7 @@ VALUES
 			'2j-3g-4',
 			100,
 			'2012-06-18T10:34:09', 
+			'2012-06-18T10:34:09',
 			'testing description for entry  name "Carl Borden"'
 		),
 	 
@@ -121,6 +129,7 @@ VALUES
 			'2j-3g-4',
 			100,
 			'2012-06-18T10:34:09', 
+			'2012-06-18T10:34:09',
 			'testing description for entry  name "Matthew Kramer"'
 		),
  
@@ -129,6 +138,7 @@ VALUES
 			'2j-3g-4',
 			100,
 			'2012-06-18T10:34:09', 
+			'2012-06-18T10:34:09',
 			'testing description for entry  name "Erik Wongvorakul"'
 		),
  
@@ -136,6 +146,7 @@ VALUES
 			(SELECT CustomerId FROM Customers WHERE Name = 'Matthew Kramer'),
 			'2j-3g-4',
 			100,
+			'2012-06-18T10:34:09',
 			'2012-06-18T10:34:09', 
 			'testing description for entry  name "Matthew Kramer"'
 		)

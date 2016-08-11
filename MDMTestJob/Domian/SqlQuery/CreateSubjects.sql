@@ -12,6 +12,7 @@ CREATE TABLE Orders
 						Number VARCHAR(50),
 						Amount INT,
 						DueTime DATETIME,
+						ProcessedTime DATETIME,
 						Description VARCHAR(1000)
 ) 
 					 

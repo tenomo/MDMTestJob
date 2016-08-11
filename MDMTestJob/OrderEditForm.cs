@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MDMTestJob.Domian.Abstract;
 using MDMTestJob.Domian.Concrete;
@@ -58,12 +52,19 @@ namespace MDMTestJob
                 this.DueTimeTextBox.Text != null
                 )
             {
-                otherOreder.Amount = Convert.ToInt32(AmountTextBox.Text);
-                otherOreder.CustomerId = (customersComboBox.SelectedItem as Customer).CustomerId;
-                otherOreder.Description = DescriptionTextBox.Text;
-                otherOreder.DueTime = DueTimeTextBox.Text;
-                otherOreder.Number = NumberTextBox.Text;
-
+                try
+                {
+                    otherOreder.Amount = Convert.ToInt32(AmountTextBox.Text);
+                    MessageBox.Show((customersComboBox.SelectedItem as Customer).CustomerId.ToString());
+                    otherOreder.CustomerId = (customersComboBox.SelectedItem as Customer).CustomerId;
+                    otherOreder.Description = DescriptionTextBox.Text;
+                    otherOreder.DueTime = DueTimeTextBox.Text;
+                    otherOreder.Number = NumberTextBox.Text;
+                }
+                catch
+                {
+                    MessageBox.Show("Incorrectly filled entry fields");
+                }
 
                orderRepository.Save(otherOreder);
                 if (AddedSuccessfully != null)
@@ -83,6 +84,11 @@ namespace MDMTestJob
             }
 
            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }    

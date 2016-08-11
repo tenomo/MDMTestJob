@@ -28,8 +28,7 @@ namespace MDMTestJob
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            CustomersGridView.DataSource = customerRepository.Customers.ToList();
-            OrdersGridView.DataSource = orderRepository.Orders.ToList();
+            UpdateDatagrid(null);
         }
 
         /// <summary>
@@ -39,13 +38,19 @@ namespace MDMTestJob
         /// <param name="e"></param>
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.SelectCustomer = this.customerRepository.Customers.Where(
-               cust => cust.CustomerId == (int)CustomersGridView.Rows[e.RowIndex].
-               Cells[0].Value).FirstOrDefault<Customer>();
+            try
+            {
+                this.SelectCustomer = this.customerRepository.Customers.Where(
+                   cust => cust.CustomerId == (int)CustomersGridView.Rows[e.RowIndex].
+                   Cells[0].Value).FirstOrDefault<Customer>();
 
-            OrdersGridView.DataSource = this.orderRepository.Orders.Where(
-                order => order.CustomerId == SelectCustomer.CustomerId).ToList();
-
+                OrdersGridView.DataSource = this.orderRepository.Orders.Where(
+                    order => order.CustomerId == SelectCustomer.CustomerId).ToList();
+            }
+            catch
+            {
+                MessageBox.Show("The table is empty");
+            }
         }
 
         /// <summary>
@@ -78,7 +83,6 @@ namespace MDMTestJob
             Customer customer = this.customerRepository.Customers.Where(
                 cust => cust.CustomerId == (int)CustomersGridView.Rows[e.RowIndex].
                 Cells[0].Value).ToList().FirstOrDefault<Customer>();
-
             CustomerEditForm customerEditForm = new CustomerEditForm(customer);
             customerEditForm.Show();
 
@@ -93,16 +97,24 @@ namespace MDMTestJob
         /// <param name="e"></param>
         private void DelCustBtn_Click(object sender, EventArgs e)
         {
-           IEnumerable<Order> customerOrders = 
-                orderRepository.Orders.Where(order => order.CustomerId == SelectCustomer.CustomerId).ToList();
+            IEnumerable<Order> customerOrders = null;
+            try
+            {
+
+                customerOrders = orderRepository.Orders.Where(order => order.CustomerId == SelectCustomer.CustomerId).ToList();
+            }
+            catch
+            {
+                MessageBox.Show("Do not select the customer, or the table is empty");
+            }
 
 
-            if (customerOrders.Count() > 0)
+            if (customerOrders != null && customerOrders.Count()>0)
             {
                 var result = new System.Windows.Forms.DialogResult();
 
                 result = MessageBox.Show("Are you sure you want to remove him ?",
-                    "this customer has "+customerOrders.Count()+" orders",
+                    "this customer has " + customerOrders.Count() + " orders",
                                 MessageBoxButtons.YesNo);
 
                 if (result == DialogResult.Yes)
@@ -118,7 +130,7 @@ namespace MDMTestJob
             }
 
             this.UpdateDatagrid(null);
-            }
+        }
 
 
 
@@ -129,11 +141,17 @@ namespace MDMTestJob
         /// <param name="e"></param>
         private void OrdersGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            // форма редактирования заказа
-            OrderEditForm orderEditForm = new OrderEditForm(SelectOrder);
+            try
+            {
+                OrderEditForm orderEditForm = new OrderEditForm(SelectOrder);
 
-            orderEditForm.AddedSuccessfully += UpdateDatagrid;
-            orderEditForm.Show();
+                orderEditForm.AddedSuccessfully += UpdateDatagrid;
+                orderEditForm.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Do not select the order, or the table is empty");
+            }
         }
 
         /// <summary>
@@ -157,14 +175,34 @@ namespace MDMTestJob
         /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
-            // удалить заказ
+            try
+            {
+                this.orderRepository.Delete(SelectOrder.OrderId);
+            }
+            catch
+            {
+                MessageBox.Show("Do not select the order, or the table is empty");
+            }
+            this.UpdateDatagrid(null);
         }
 
         private void OrdersGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.SelectOrder = this.orderRepository.Orders.Where(
-              order => order.OrderId == (int)OrdersGridView.Rows[e.RowIndex].
-              Cells[0].Value).First<Order>();
+            try
+            {
+                this.SelectOrder = this.orderRepository.Orders.Where(
+                  order => order.OrderId == (int)OrdersGridView.Rows[e.RowIndex].
+                  Cells[0].Value).First<Order>();
+            }
+            catch
+            {
+                MessageBox.Show("The table is empty");
+            }
+        }
+
+        private void CustomersGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            //toolTip1.Show("Double click for edit entry", );
         }
     }
 }

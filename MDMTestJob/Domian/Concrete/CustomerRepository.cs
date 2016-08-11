@@ -50,9 +50,6 @@ namespace MDMTestJob.Domian.Concrete
             if (customer.CustomerId == 0)
             {
                 this.context.Customers.Add(customer);
-             //   context.Entry(customer).State = EntityState.Added;
-
-                System.Windows.Forms.MessageBox.Show(customer.CustomerId.ToString());
             }
 
             else

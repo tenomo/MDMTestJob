@@ -54,7 +54,7 @@
             this.customersComboBox.Name = "customersComboBox";
             this.customersComboBox.Size = new System.Drawing.Size(270, 21);
             this.customersComboBox.TabIndex = 0;
-           // this.customersComboBox.SelectedIndexChanged += new System.EventHandler(this.customersComboBox_SelectedIndexChanged);
+            this.customersComboBox.Text = "Select";
             // 
             // NumberTextBox
             // 
@@ -63,6 +63,7 @@
             this.NumberTextBox.Name = "NumberTextBox";
             this.NumberTextBox.Size = new System.Drawing.Size(270, 20);
             this.NumberTextBox.TabIndex = 7;
+            this.NumberTextBox.Text = "Input number";
             // 
             // AmountTextBox
             // 
@@ -71,6 +72,7 @@
             this.AmountTextBox.Name = "AmountTextBox";
             this.AmountTextBox.Size = new System.Drawing.Size(270, 20);
             this.AmountTextBox.TabIndex = 8;
+            this.AmountTextBox.Text = "input amount";
             // 
             // DueTimeTextBox
             // 
@@ -79,6 +81,7 @@
             this.DueTimeTextBox.Name = "DueTimeTextBox";
             this.DueTimeTextBox.Size = new System.Drawing.Size(270, 20);
             this.DueTimeTextBox.TabIndex = 9;
+            this.DueTimeTextBox.Text = "input due time 2012-06-18T10:34:09";
             // 
             // ProcessedTimeTextBox4
             // 
@@ -88,6 +91,7 @@
             this.ProcessedTimeTextBox4.Name = "ProcessedTimeTextBox4";
             this.ProcessedTimeTextBox4.Size = new System.Drawing.Size(270, 20);
             this.ProcessedTimeTextBox4.TabIndex = 10;
+            this.ProcessedTimeTextBox4.Text = "input Processed time";
             // 
             // label1
             // 
@@ -125,6 +129,7 @@
             this.DescriptionTextBox.Name = "DescriptionTextBox";
             this.DescriptionTextBox.Size = new System.Drawing.Size(270, 115);
             this.DescriptionTextBox.TabIndex = 16;
+            this.DescriptionTextBox.Text = "input description";
             // 
             // label6
             // 
@@ -183,8 +188,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(69, 23);
             this.button2.TabIndex = 15;
-            this.button2.Text = "button2";
+            this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -193,7 +199,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
+            this.button1.Text = "Ok";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -207,7 +213,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "OrderEditForm";
-            this.Text = "OrderEditForm";
+            this.Text = "Order editor";
             this.Load += new System.EventHandler(this.OrderEditForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

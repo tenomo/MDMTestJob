@@ -15,6 +15,7 @@ namespace MDMTestJob
 
         public CustomerEditForm( )
         {
+            otherCustomer = new Customer();
             InitializeComponent();
  
             
