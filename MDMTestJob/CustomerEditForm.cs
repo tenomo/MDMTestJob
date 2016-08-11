@@ -1,20 +1,12 @@
-﻿using MDMTestJob.Domian.Abstract;
-using MDMTestJob.Domian.Concrete;
+﻿using MDMTestJob.Domian.Concrete;
 using MDMTestJob.Domian.Entity;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MDMTestJob
 {
 
-   public delegate void AddedSuccessfullyEventHandler (Customer e);
+    public delegate void AddedSuccessfullyEventHandler (object e);
     public partial class CustomerEditForm : Form
     {
 
@@ -24,7 +16,7 @@ namespace MDMTestJob
         public CustomerEditForm( )
         {
             InitializeComponent();
-
+ 
             
         }
         public CustomerEditForm(Customer customer)
@@ -45,10 +37,7 @@ namespace MDMTestJob
             if (this.NameTextBox.Text !=null &&
                 this.AddressTextBoc.Text!=null && 
                 this.PhoneNumTextBox.Text!=null)
-            {
-
-                if (otherCustomer == null)
-                    otherCustomer = new Customer();
+            {                   
                 
                 otherCustomer.Address = this.AddressTextBoc.Text;
                 otherCustomer.Name = this.NameTextBox.Text;
@@ -71,6 +60,11 @@ namespace MDMTestJob
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void CustomerEditForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

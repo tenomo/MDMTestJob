@@ -45,7 +45,7 @@ namespace MDMTestJob.Domian.Concrete
        public void Save(Order order)
         { 
 
-            if (order.CustomerId == 0)
+            if (order.OrderId == 0)
             {
 
                 this.context.Orders.Add(order);

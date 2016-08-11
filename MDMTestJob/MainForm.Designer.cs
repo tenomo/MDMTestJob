@@ -61,6 +61,7 @@
             this.OrdersGridView.Name = "OrdersGridView";
             this.OrdersGridView.Size = new System.Drawing.Size(429, 422);
             this.OrdersGridView.TabIndex = 1;
+            this.OrdersGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OrdersGridView_CellClick);
             this.OrdersGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OrdersGridView_CellDoubleClick);
             // 
             // button1
@@ -125,7 +126,7 @@
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 6;
             this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true; 
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 

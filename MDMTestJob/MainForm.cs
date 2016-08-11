@@ -14,6 +14,7 @@ namespace MDMTestJob
         ICustomerRepository customerRepository;
 
         private Customer SelectCustomer;
+        private Order SelectOrder;
 
         public MainForm()
         {
@@ -60,7 +61,7 @@ namespace MDMTestJob
         }
 
          
-        private void UpdateDatagrid(Customer e)
+        private void UpdateDatagrid(object o)
         {
             CustomersGridView.DataSource = customerRepository.Customers.ToList();
             OrdersGridView.DataSource = orderRepository.Orders.ToList();
@@ -129,7 +130,9 @@ namespace MDMTestJob
         private void OrdersGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             // форма редактирования заказа
-            OrderEditForm orderEditForm = new OrderEditForm();
+            OrderEditForm orderEditForm = new OrderEditForm(SelectOrder);
+
+            orderEditForm.AddedSuccessfully += UpdateDatagrid;
             orderEditForm.Show();
         }
 
@@ -141,7 +144,9 @@ namespace MDMTestJob
         private void button3_Click(object sender, EventArgs e)
         {
             // форма добвления заказа 
+
             OrderEditForm orderEditForm = new OrderEditForm();
+            orderEditForm.AddedSuccessfully += UpdateDatagrid;
             orderEditForm.Show();
         }
 
@@ -155,6 +160,11 @@ namespace MDMTestJob
             // удалить заказ
         }
 
-         
+        private void OrdersGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.SelectOrder = this.orderRepository.Orders.Where(
+              order => order.OrderId == (int)OrdersGridView.Rows[e.RowIndex].
+              Cells[0].Value).First<Order>();
+        }
     }
 }
