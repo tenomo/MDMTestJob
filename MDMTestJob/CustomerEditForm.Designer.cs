@@ -49,10 +49,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
-            // NameTextBoc
+            // NameTextBox
             // 
             this.NameTextBox.Location = new System.Drawing.Point(85, 7);
-            this.NameTextBox.Name = "NameTextBoc";
+            this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(270, 20);
             this.NameTextBox.TabIndex = 1;
             this.NameTextBox.Text = "Input name";
@@ -77,6 +77,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // AddressTextBoc
             // 
@@ -131,7 +132,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "CustomerEditForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer edit";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

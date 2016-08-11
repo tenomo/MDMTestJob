@@ -7,6 +7,7 @@ namespace MDMTestJob.Domian.Abstract
     {
         IEnumerable<Order> Orders { get; } 
         Order Delete(int id);
+        void DeleteByCustomer(int customerID); 
         void Save(Order order);
     }
 }

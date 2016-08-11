@@ -1,6 +1,8 @@
 ﻿using MDMTestJob.Domian.Abstract;
 using MDMTestJob.Domian.Entity;
 using System.Collections.Generic;
+using System;
+using System.Linq;
 
 namespace MDMTestJob.Domian.Concrete
 {
@@ -28,7 +30,8 @@ namespace MDMTestJob.Domian.Concrete
 
         public Order Delete(int id)
         {
-            Order item = context.Orders.Find(id);
+            Order item = context.Orders.Where(order =>order.OrderId == id).FirstOrDefault();
+
             if (item != null)
             {
                 context.Orders.Remove(item);
@@ -50,7 +53,7 @@ namespace MDMTestJob.Domian.Concrete
 
             else
             {
-                Order changeableOrder = this.context.Orders.Find(order.CustomerId);
+                Order changeableOrder = this.context.Orders.Where(ord => ord.OrderId == order.OrderId).First(); ;
 
                 changeableOrder.Amount = order.Amount;
                 changeableOrder.CustomerId = order.CustomerId;
@@ -60,6 +63,10 @@ namespace MDMTestJob.Domian.Concrete
             }
             this.context.SaveChanges();
         }
- 
+
+        public void DeleteByCustomer(int customerID)
+        {
+            Orders.ToList().RemoveAll(order => order.CustomerId == customerID);
+        }
     }
 }

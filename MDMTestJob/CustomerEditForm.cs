@@ -13,8 +13,12 @@ using System.Windows.Forms;
 
 namespace MDMTestJob
 {
+
+   public delegate void AddedSuccessfullyEventHandler (Customer e);
     public partial class CustomerEditForm : Form
     {
+
+        public event AddedSuccessfullyEventHandler AddedSuccessfully;
         Customer otherCustomer;
 
         public CustomerEditForm( )
@@ -49,9 +53,12 @@ namespace MDMTestJob
                 otherCustomer.Address = this.AddressTextBoc.Text;
                 otherCustomer.Name = this.NameTextBox.Text;
                 otherCustomer.PhoneNum = this.PhoneNumTextBox.Text;
-
                 CustomerRepository.Instance.Save(otherCustomer);
 
+                if (AddedSuccessfully != null)
+                {
+                    AddedSuccessfully(otherCustomer);
+                }
                 this.Close();
             }
 
@@ -59,6 +66,11 @@ namespace MDMTestJob
             {
                 MessageBox.Show("Fields may not contain empty fields");
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
