@@ -27,6 +27,7 @@ namespace MDMTestJob
 
             this.NameTextBox.Text = otherCustomer.Name;
             this.AddressTextBoc.Text = otherCustomer.Address;
+         
             this.PhoneNumTextBox.Text = otherCustomer.PhoneNum;
         }
 

@@ -55,7 +55,7 @@
             this.CustomersGridView.TabIndex = 0;
             this.CustomersGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.CustomersGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CustomersGridView_CellDoubleClick);
-            this.CustomersGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.CustomersGridView_CellEnter);
+           // this.CustomersGridView.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.CustomersGridView_CellEnter);
             // 
             // OrdersGridView
             // 
@@ -133,17 +133,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).EndInit();
             this.ResumeLayout(false);
 
+
+           
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView CustomersGridView;
         private System.Windows.Forms.DataGridView OrdersGridView;
-        private System.Windows.Forms.BindingSource customersBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumDataGridViewTextBoxColumn;
+      //  private System.Windows.Forms.BindingSource customersBindingSource;
+      //  private System.Windows.Forms.DataGridViewTextBoxColumn customerIdDataGridViewTextBoxColumn;
+      //  private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+      //  private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+      //  private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;

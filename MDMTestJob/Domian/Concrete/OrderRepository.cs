@@ -59,6 +59,7 @@ namespace MDMTestJob.Domian.Concrete
                 changeableOrder.CustomerId = order.CustomerId;
                 changeableOrder.Description = order.Description;
                 changeableOrder.DueTime = order.DueTime;
+                changeableOrder.ProcessedTime = order.ProcessedTime;
                 changeableOrder.Number = order.Number;
             }
             this.context.SaveChanges();

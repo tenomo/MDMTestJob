@@ -18,7 +18,8 @@ namespace MDMTestJob.Domian.Entity
         public Nullable<int> CustomerId { get; set; }
         public string Number { get; set; }
         public Nullable<int> Amount { get; set; }
-        public string DueTime { get; set; }
+        public Nullable<System.DateTime> DueTime { get; set; }
         public string Description { get; set; }
+        public Nullable<System.DateTime> ProcessedTime { get; set; }
     }
 }

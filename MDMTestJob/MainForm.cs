@@ -23,8 +23,12 @@ namespace MDMTestJob
             orderRepository = OrderRepository.Instance;
             customerRepository = CustomerRepository.Instance;
 
-
         }
+
+        
+      
+            
+
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -63,16 +67,9 @@ namespace MDMTestJob
             CustomerEditForm customerEditForm = new CustomerEditForm();
             customerEditForm.Show();
             customerEditForm.AddedSuccessfully += UpdateDatagrid;
-        }
-
-         
-        private void UpdateDatagrid(object o)
-        {
-            CustomersGridView.DataSource = customerRepository.Customers.ToList();
-            OrdersGridView.DataSource = orderRepository.Orders.ToList();
-        }
-
-
+        }       
+       
+        
         /// <summary>
         /// Edit customer in edit form.
         /// </summary>
@@ -80,14 +77,22 @@ namespace MDMTestJob
         /// <param name="e"></param>
         private void CustomersGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Customer customer = this.customerRepository.Customers.Where(
-                cust => cust.CustomerId == (int)CustomersGridView.Rows[e.RowIndex].
-                Cells[0].Value).ToList().FirstOrDefault<Customer>();
-            CustomerEditForm customerEditForm = new CustomerEditForm(customer);
-            customerEditForm.Show();
+            try
+            {
+                Customer customer = this.customerRepository.Customers.Where(
+                    cust => cust.CustomerId == (int)CustomersGridView.Rows[e.RowIndex].
+                    Cells[0].Value).ToList().FirstOrDefault<Customer>();
+                CustomerEditForm customerEditForm = new CustomerEditForm(customer);
+                customerEditForm.Show();
 
 
-            customerEditForm.AddedSuccessfully += UpdateDatagrid;
+                customerEditForm.AddedSuccessfully += UpdateDatagrid;
+            }
+
+            catch 
+            {
+                MessageBox.Show("The table is empty");
+            }
         }
 
         /// <summary>
@@ -199,10 +204,21 @@ namespace MDMTestJob
                 MessageBox.Show("The table is empty");
             }
         }
+       
 
-        private void CustomersGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
+        private void UpdateDatagrid(object o)
         {
-            //toolTip1.Show("Double click for edit entry", );
+            CustomersGridView.DataSource = customerRepository.Customers.ToList();
+            OrdersGridView.DataSource = orderRepository.Orders.ToList();
+
+            CustomersGridView.Columns[0].HeaderText = "Id";
+            CustomersGridView.Columns[3].HeaderText = "Phone number";
+
+            OrdersGridView.Columns[1].HeaderText = "Id";
+            OrdersGridView.Columns[1].HeaderText = "Customer id";
+            OrdersGridView.Columns[4].HeaderText = "Due time";
+            OrdersGridView.Columns[4].HeaderText = "Processed time";
+
         }
     }
 }

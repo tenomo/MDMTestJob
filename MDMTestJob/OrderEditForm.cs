@@ -21,8 +21,9 @@ namespace MDMTestJob
 
             this.AmountTextBox.Text = order.Amount.ToString();
             this.DescriptionTextBox.Text = order.Description;
-            this.DueTimeTextBox.Text = order.DueTime.ToString();
+            this.DueTimeDatePicker.Value = order.DueTime.Value;
             this.NumberTextBox.Text = order.Number.ToString();
+            this.ProcessedTimeDatePicker.Value = order.ProcessedTime.Value;
         }
 
 
@@ -48,8 +49,7 @@ namespace MDMTestJob
             if (this.AmountTextBox.Text != null &&
                 this.DescriptionTextBox.Text != null &&
                 this.NumberTextBox.Text != null &&
-                this.DescriptionTextBox.Text != null &&
-                this.DueTimeTextBox.Text != null
+                this.DescriptionTextBox.Text != null            
                 )
             {
                 try
@@ -58,8 +58,9 @@ namespace MDMTestJob
                     MessageBox.Show((customersComboBox.SelectedItem as Customer).CustomerId.ToString());
                     otherOreder.CustomerId = (customersComboBox.SelectedItem as Customer).CustomerId;
                     otherOreder.Description = DescriptionTextBox.Text;
-                    otherOreder.DueTime = DueTimeTextBox.Text;
+                    otherOreder.DueTime = DueTimeDatePicker.Value;
                     otherOreder.Number = NumberTextBox.Text;
+                    otherOreder.ProcessedTime =  this.ProcessedTimeDatePicker.Value;
                 }
                 catch
                 {

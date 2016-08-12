@@ -31,8 +31,6 @@
             this.customersComboBox = new System.Windows.Forms.ComboBox();
             this.NumberTextBox = new System.Windows.Forms.TextBox();
             this.AmountTextBox = new System.Windows.Forms.TextBox();
-            this.DueTimeTextBox = new System.Windows.Forms.TextBox();
-            this.ProcessedTimeTextBox4 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DescriptionTextBox = new System.Windows.Forms.TextBox();
@@ -43,6 +41,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.DueTimeDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.ProcessedTimeDatePicker = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,25 +74,6 @@
             this.AmountTextBox.TabIndex = 8;
             this.AmountTextBox.Text = "input amount";
             // 
-            // DueTimeTextBox
-            // 
-            this.DueTimeTextBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.DueTimeTextBox.Location = new System.Drawing.Point(87, 86);
-            this.DueTimeTextBox.Name = "DueTimeTextBox";
-            this.DueTimeTextBox.Size = new System.Drawing.Size(270, 20);
-            this.DueTimeTextBox.TabIndex = 9;
-            this.DueTimeTextBox.Text = "input due time 2012-06-18T10:34:09";
-            // 
-            // ProcessedTimeTextBox4
-            // 
-            this.ProcessedTimeTextBox4.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.ProcessedTimeTextBox4.CausesValidation = false;
-            this.ProcessedTimeTextBox4.Location = new System.Drawing.Point(87, 112);
-            this.ProcessedTimeTextBox4.Name = "ProcessedTimeTextBox4";
-            this.ProcessedTimeTextBox4.Size = new System.Drawing.Size(270, 20);
-            this.ProcessedTimeTextBox4.TabIndex = 10;
-            this.ProcessedTimeTextBox4.Text = "input Processed time";
-            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -105,18 +86,18 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ProcessedTimeDatePicker);
+            this.panel1.Controls.Add(this.DueTimeDatePicker);
             this.panel1.Controls.Add(this.DescriptionTextBox);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.NumberTextBox);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.customersComboBox);
-            this.panel1.Controls.Add(this.ProcessedTimeTextBox4);
             this.panel1.Controls.Add(this.Lable4);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.AmountTextBox);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.DueTimeTextBox);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(369, 284);
@@ -203,6 +184,20 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dateTimePicker1
+            // 
+            this.DueTimeDatePicker.Location = new System.Drawing.Point(87, 89);
+            this.DueTimeDatePicker.Name = "dateTimePicker1";
+            this.DueTimeDatePicker.Size = new System.Drawing.Size(270, 20);
+            this.DueTimeDatePicker.TabIndex = 16;
+            // 
+            // dateTimePicker2
+            // 
+            this.ProcessedTimeDatePicker.Location = new System.Drawing.Point(87, 115);
+            this.ProcessedTimeDatePicker.Name = "dateTimePicker2";
+            this.ProcessedTimeDatePicker.Size = new System.Drawing.Size(270, 20);
+            this.ProcessedTimeDatePicker.TabIndex = 18;
+            // 
             // OrderEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,8 +221,6 @@
         private System.Windows.Forms.ComboBox customersComboBox;
         private System.Windows.Forms.TextBox NumberTextBox;
         private System.Windows.Forms.TextBox AmountTextBox;
-        private System.Windows.Forms.TextBox DueTimeTextBox;
-        private System.Windows.Forms.TextBox ProcessedTimeTextBox4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
@@ -238,5 +231,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox DescriptionTextBox;
+        private System.Windows.Forms.DateTimePicker ProcessedTimeDatePicker;
+        private System.Windows.Forms.DateTimePicker DueTimeDatePicker;
     }
 }
