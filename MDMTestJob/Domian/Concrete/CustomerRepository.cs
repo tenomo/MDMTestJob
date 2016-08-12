@@ -60,11 +60,8 @@ namespace MDMTestJob.Domian.Concrete
                 changeableCustobmer.Name = customer.Name;
                 changeableCustobmer.PhoneNum = customer.PhoneNum;
                 changeableCustobmer.Address = customer.Address;
-               // context.Entry(customer).State = EntityState.Modified;
-            }
-            
-
-            
+            }         
+                        
             this.context.SaveChanges();
 
         }

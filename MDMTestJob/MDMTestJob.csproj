@@ -12,7 +12,8 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <PublishUrl>publish\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Вадег\Desktop\WebSite\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -83,6 +83,7 @@
     <Compile Include="Domian\Abstract\IOrderRepository.cs" />
     <Compile Include="Domian\Concrete\CustomerRepository.cs" />
     <Compile Include="Domian\Concrete\OrderRepository.cs" />
+    <Compile Include="Domian\Concrete\TextBoxValidator.cs" />
     <Compile Include="Domian\Entity\Customer.cs">
       <DependentUpon>MDMTestJobDBModel.tt</DependentUpon>
     </Compile>

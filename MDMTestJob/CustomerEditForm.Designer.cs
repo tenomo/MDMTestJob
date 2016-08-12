@@ -55,7 +55,6 @@
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(270, 20);
             this.NameTextBox.TabIndex = 1;
-            this.NameTextBox.Text = "Input name";
             // 
             // button1
             // 
@@ -101,6 +100,7 @@
             this.PhoneNumTextBox.Name = "PhoneNumTextBox";
             this.PhoneNumTextBox.Size = new System.Drawing.Size(270, 20);
             this.PhoneNumTextBox.TabIndex = 7;
+            this.PhoneNumTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumTextBox_KeyPress);
             // 
             // label3
             // 

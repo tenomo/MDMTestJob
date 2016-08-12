@@ -46,10 +46,10 @@ namespace MDMTestJob
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (this.AmountTextBox.Text != null &&
-                this.DescriptionTextBox.Text != null &&
-                this.NumberTextBox.Text != null &&
-                this.DescriptionTextBox.Text != null            
+            if (TextBoxValidator.ValidityCheck( this.AmountTextBox.Text) &&
+                TextBoxValidator.ValidityCheck(this.DescriptionTextBox.Text) &&
+                TextBoxValidator.ValidityCheck(this.NumberTextBox.Text) &&
+                TextBoxValidator.ValidityCheck(this.DescriptionTextBox.Text)            
                 )
             {
                 try

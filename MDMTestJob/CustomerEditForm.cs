@@ -36,9 +36,9 @@ namespace MDMTestJob
 
             
 
-            if (this.NameTextBox.Text !=null &&
-                this.AddressTextBoc.Text!=null && 
-                this.PhoneNumTextBox.Text!=null)
+            if (TextBoxValidator.ValidityCheck(this.NameTextBox.Text) &&
+                TextBoxValidator.ValidityCheck(this.AddressTextBoc.Text) &&
+                TextBoxValidator.ValidityCheck(this.PhoneNumTextBox.Text))
             {                   
                 
                 otherCustomer.Address = this.AddressTextBoc.Text;
@@ -67,6 +67,12 @@ namespace MDMTestJob
         private void CustomerEditForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void PhoneNumTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
+                e.Handled = true;
         }
     }
 }
