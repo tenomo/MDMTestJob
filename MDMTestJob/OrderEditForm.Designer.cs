@@ -33,6 +33,8 @@
             this.AmountTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ProcessedTimeDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.DueTimeDatePicker = new System.Windows.Forms.DateTimePicker();
             this.DescriptionTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -41,8 +43,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.DueTimeDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.ProcessedTimeDatePicker = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +54,6 @@
             this.customersComboBox.Name = "customersComboBox";
             this.customersComboBox.Size = new System.Drawing.Size(270, 21);
             this.customersComboBox.TabIndex = 0;
-            this.customersComboBox.Text = "Select";
             // 
             // NumberTextBox
             // 
@@ -63,7 +62,6 @@
             this.NumberTextBox.Name = "NumberTextBox";
             this.NumberTextBox.Size = new System.Drawing.Size(270, 20);
             this.NumberTextBox.TabIndex = 7;
-            this.NumberTextBox.Text = "Input number";
             // 
             // AmountTextBox
             // 
@@ -72,7 +70,7 @@
             this.AmountTextBox.Name = "AmountTextBox";
             this.AmountTextBox.Size = new System.Drawing.Size(270, 20);
             this.AmountTextBox.TabIndex = 8;
-            this.AmountTextBox.Text = "input amount";
+            this.AmountTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AmountTextBox_KeyPress);
             // 
             // label1
             // 
@@ -103,6 +101,20 @@
             this.panel1.Size = new System.Drawing.Size(369, 284);
             this.panel1.TabIndex = 13;
             // 
+            // ProcessedTimeDatePicker
+            // 
+            this.ProcessedTimeDatePicker.Location = new System.Drawing.Point(87, 115);
+            this.ProcessedTimeDatePicker.Name = "ProcessedTimeDatePicker";
+            this.ProcessedTimeDatePicker.Size = new System.Drawing.Size(270, 20);
+            this.ProcessedTimeDatePicker.TabIndex = 18;
+            // 
+            // DueTimeDatePicker
+            // 
+            this.DueTimeDatePicker.Location = new System.Drawing.Point(87, 89);
+            this.DueTimeDatePicker.Name = "DueTimeDatePicker";
+            this.DueTimeDatePicker.Size = new System.Drawing.Size(270, 20);
+            this.DueTimeDatePicker.TabIndex = 16;
+            // 
             // DescriptionTextBox
             // 
             this.DescriptionTextBox.Location = new System.Drawing.Point(87, 138);
@@ -110,7 +122,6 @@
             this.DescriptionTextBox.Name = "DescriptionTextBox";
             this.DescriptionTextBox.Size = new System.Drawing.Size(270, 115);
             this.DescriptionTextBox.TabIndex = 16;
-            this.DescriptionTextBox.Text = "input description";
             // 
             // label6
             // 
@@ -183,20 +194,6 @@
             this.button1.Text = "Ok";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dateTimePicker1
-            // 
-            this.DueTimeDatePicker.Location = new System.Drawing.Point(87, 89);
-            this.DueTimeDatePicker.Name = "dateTimePicker1";
-            this.DueTimeDatePicker.Size = new System.Drawing.Size(270, 20);
-            this.DueTimeDatePicker.TabIndex = 16;
-            // 
-            // dateTimePicker2
-            // 
-            this.ProcessedTimeDatePicker.Location = new System.Drawing.Point(87, 115);
-            this.ProcessedTimeDatePicker.Name = "dateTimePicker2";
-            this.ProcessedTimeDatePicker.Size = new System.Drawing.Size(270, 20);
-            this.ProcessedTimeDatePicker.TabIndex = 18;
             // 
             // OrderEditForm
             // 
