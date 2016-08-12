@@ -55,7 +55,6 @@ namespace MDMTestJob
                 try
                 {
                     otherOreder.Amount = Convert.ToInt32(AmountTextBox.Text);
-                    MessageBox.Show((customersComboBox.SelectedItem as Customer).CustomerId.ToString());
                     otherOreder.CustomerId = (customersComboBox.SelectedItem as Customer).CustomerId;
                     otherOreder.Description = DescriptionTextBox.Text;
                     otherOreder.DueTime = DueTimeDatePicker.Value;

@@ -170,7 +170,8 @@
       <LastGenOutput>MDMTestJobDBModel.cs</LastGenOutput>
     </Content>
     <Content Include="Domian\SqlQuery\CreateSubjects.sql" />
-    <Content Include="Domian\SqlQuery\Insert_customers_and_orders.sql" />
+    <Content Include="Domian\SqlQuery\InsertOrders.sql" />
+    <Content Include="Domian\SqlQuery\Insert_customers.sql" />
     <Content Include="MdmTestJob_db.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
