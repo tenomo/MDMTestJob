@@ -10,7 +10,7 @@ namespace MDMTestJob.Domian.Concrete
 
             try
             {
-                return Regex.IsMatch(text, @"[^\w\.@-]", RegexOptions.None, TimeSpan.FromSeconds(1.5));
+                return Regex.IsMatch(text, @"^[a-zA-Яа-я()\\\-/]*$", RegexOptions.None, TimeSpan.FromSeconds(1.5));
             }
              
             catch (RegexMatchTimeoutException)

@@ -37,8 +37,7 @@ namespace MDMTestJob
             
 
             if (TextBoxValidator.ValidityCheck(this.NameTextBox.Text) &&
-                TextBoxValidator.ValidityCheck(this.AddressTextBoc.Text) &&
-                TextBoxValidator.ValidityCheck(this.PhoneNumTextBox.Text))
+                TextBoxValidator.ValidityCheck(this.AddressTextBoc.Text) )
             {                   
                 
                 otherCustomer.Address = this.AddressTextBoc.Text;
