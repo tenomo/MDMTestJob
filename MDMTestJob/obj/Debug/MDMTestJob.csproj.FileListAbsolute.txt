@@ -1,0 +1,17 @@
+c:\users\вадег\documents\visual studio 2015\Projects\MDMTestJob\MDMTestJob\bin\Debug\MDMTestJob.exe.config
+C:\Users\Вадег\documents\visual studio 2015\Projects\MDMTestJob\MDMTestJob\bin\Debug\MDMTestJob.exe
+C:\Users\Вадег\documents\visual studio 2015\Projects\MDMTestJob\MDMTestJob\bin\Debug\MDMTestJob.pdb
+C:\Users\Вадег\documents\visual studio 2015\Projects\MDMTestJob\MDMTestJob\obj\Debug\MDMTestJob.csprojResolveAssemblyReference.cache
+C:\Users\Вадег\documents\visual studio 2015\Projects\MDMTestJob\MDMTestJob\obj\Debug\MDMTestJob.Properties.Resources.resources
+C:\Users\Вадег\documents\visual studio 2015\Projects\MDMTestJob\MDMTestJob\obj\Debug\MDMTestJob.csproj.GenerateResource.Cache
+C:\Users\Вадег\documents\visual studio 2015\Projects\MDMTestJob\MDMTestJob\obj\Debug\MDMTestJob.exe
+C:\Users\Вадег\documents\visual studio 2015\Projects\MDMTestJob\MDMTestJob\obj\Debug\MDMTestJob.pdb
+C:\Users\Вадег\documents\visual studio 2015\Projects\MDMTestJob\MDMTestJob\bin\Debug\EntityFramework.dll
+C:\Users\Вадег\documents\visual studio 2015\Projects\MDMTestJob\MDMTestJob\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Вадег\documents\visual studio 2015\Projects\MDMTestJob\MDMTestJob\bin\Debug\EntityFramework.xml
+C:\Users\Вадег\documents\visual studio 2015\Projects\MDMTestJob\MDMTestJob\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Вадег\documents\visual studio 2015\Projects\MDMTestJob\MDMTestJob\obj\Debug\MDMTestJob.MainForm.resources
+C:\Users\Вадег\documents\visual studio 2015\Projects\MDMTestJob\MDMTestJob\obj\Debug\MDMTestJob.CustomerEditForm.resources
+C:\Users\Вадег\documents\visual studio 2015\Projects\MDMTestJob\MDMTestJob\bin\Debug\MdmTestJob_db.mdf
+C:\Users\Вадег\documents\visual studio 2015\Projects\MDMTestJob\MDMTestJob\bin\Debug\MdmTestJob_db_log.ldf
+C:\Users\Вадег\documents\visual studio 2015\Projects\MDMTestJob\MDMTestJob\obj\Debug\MDMTestJob.OrderEditForm.resources
